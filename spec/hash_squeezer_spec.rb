@@ -26,4 +26,12 @@ RSpec.describe HashSqueezer do
       expect(result).to eq({})
     end
   end
+
+  context("empty string") do
+    let(:data) { {a: [""] } }
+    it "squeeze keeps empty string" do
+      result = HashSqueezer.squeeze(data)
+      expect(result).to eq({a: [""]})
+    end
+  end
 end
